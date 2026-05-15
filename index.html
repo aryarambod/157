@@ -59,7 +59,7 @@
 </head>
 <body>
 
-  <div id="splash" onclick="this.classList.add('hidden')">
+  <div id="splash">
     <h1>157</h1>
     <p>CLICK TO ENTER</p>
     <small>audio · webcam · keyboard</small>
@@ -67,5 +67,24 @@
 
   <!-- main sketch -->
   <script src="sketch.js"></script>
+
+  <script>
+    document.getElementById('splash').addEventListener('click', function() {
+      var splash = this;
+      // userStartAudio() is provided by p5.sound — resumes the AudioContext
+      // on a user gesture, which browsers require before any audio can play.
+      if (typeof userStartAudio === 'function') {
+        userStartAudio().then(function() {
+          splash.classList.add('hidden');
+        });
+      } else {
+        // Fallback: resume Web Audio context directly if p5.sound isn't ready yet
+        if (window.getAudioContext && getAudioContext().state === 'suspended') {
+          getAudioContext().resume();
+        }
+        splash.classList.add('hidden');
+      }
+    });
+  </script>
 </body>
 </html>
