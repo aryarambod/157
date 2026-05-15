@@ -404,8 +404,20 @@ function clamp(v,lo,hi){ return Math.max(lo, Math.min(hi, v)); }
 const MIDI_FREQS = DUB_NOTES.map(midiToFreq);
 
 // ─── PRELOAD ─────────────────────────────────────────────────────────────────
+// Models load asynchronously after setup so that a missing /assets/ folder
+// (e.g. on the public web build) never blocks the canvas from appearing.
 function preload() {
-  for (let f of modelFiles) models.push(loadModel('assets/' + f, true));
+  // intentionally empty — models loaded lazily in setup()
+}
+function _loadModelsAsync() {
+  for (let f of modelFiles) {
+    try {
+      loadModel('assets/' + f, true,
+        (m) => { models.push(m); },
+        (err) => { /* missing asset — fall back to procedural shapes */ }
+      );
+    } catch (e) { /* ignore */ }
+  }
 }
 
 // ─── SETUP ───────────────────────────────────────────────────────────────────
@@ -413,6 +425,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   colorMode(RGB, 255, 255, 255, 255);
   cameraPos = createVector(0, 0, 400);
+  _loadModelsAsync();
 
   lpFilter = new p5.LowPass();
   hpFilter = new p5.HighPass();
