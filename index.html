@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>157</title>
+  <meta name="description" content="157 — a generative audiovisual instrument comprising 157 functions, three procedural entity classes, and forty-eight performable inputs." />
+
+  <!-- p5.js core + sound addon -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/addons/p5.sound.min.js"></script>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #c0c0d8;
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      overflow: hidden;
+    }
+    canvas { display: block; }
+
+    /* Splash / start overlay — required for audio context to start on user gesture */
+    #splash {
+      position: fixed;
+      inset: 0;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      cursor: pointer;
+      transition: opacity 600ms ease;
+    }
+    #splash.hidden { opacity: 0; pointer-events: none; }
+    #splash h1 {
+      font-size: 14vw;
+      font-weight: 200;
+      letter-spacing: 0.05em;
+      margin: 0;
+      color: #fff;
+      mix-blend-mode: difference;
+    }
+    #splash p {
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      color: #888;
+      margin-top: 24px;
+    }
+    #splash small {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      color: #555;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="splash" onclick="this.classList.add('hidden')">
+    <h1>157</h1>
+    <p>CLICK TO ENTER</p>
+    <small>audio · webcam · keyboard</small>
+  </div>
+
+  <!-- main sketch -->
+  <script src="sketch.js"></script>
+</body>
+</html>
