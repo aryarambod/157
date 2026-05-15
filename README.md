@@ -2,11 +2,11 @@
 
 *Audiovisual performance work — 2026*
 
-**157** is a generative audiovisual instrument comprising 157 functions, three procedural entity classes, and forty-eight performable inputs. Built as a single executable score in p5.js, the work operates simultaneously as composition, instrument, and image — a system in which sound, portraiture, and code are inseparable dimensions of the same gesture.
+157 is a generative audiovisual instrument comprising 157 functions, three procedural entity classes, and forty-eight performable inputs. Built as a single executable score in p5.js, the work operates simultaneously as composition, instrument, and image  a system in which sound, portraiture, and code are inseparable dimensions of the same gesture.
 
-At its core, the piece treats the human figure as unstable data. Procedurally generated portraits drift, fracture, and recombine in real time, modulated by an audio engine of layered oscillators, dub harmonics, and granular noise. Three depth presets *FIGURES*, *ARCHITECTURE*, *ORGANISMS* — invoke distinct wireframe ecologies that respond to amplitude rather than time, surfacing only when sound demands their presence. Nothing in the work is pre-rendered; every frame is computed at the moment of its appearance and lost the moment after.
+At its core, the piece treats the human figure as unstable data. Procedurally generated portraits drift, fracture, and recombine in real time, modulated by an audio engine of layered oscillators, dub harmonics, and granular noise. Three depth presets *FIGURES*, *ARCHITECTURE*, *ORGANISMS*  invoke distinct wireframe ecologies that respond to amplitude rather than time, surfacing only when sound demands their presence. Nothing in the work is pre-rendered; every frame is computed at the moment of its appearance and lost the moment after.
 
-The title refers to the number of functions that constitute the system. It is a self-portrait of the code: a declaration that the work is not an image of something, but a count of operations a finite arithmetic of presence.
+The title refers to the number of functions that constitute the system. 
 
 ---
 
